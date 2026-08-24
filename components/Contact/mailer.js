@@ -3,43 +3,25 @@ import emailjs from "@emailjs/browser";
 const mail = ({ name, email, message }) => {
   const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
   const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
-  const publicKey = process.env.NEXT_PUBLIC_USER_ID;
 
-  console.log("EmailJS Configuration Check:", {
-    hasServiceId: !!serviceId,
-    hasTemplateId: !!templateId,
-    hasPublicKey: !!publicKey,
-  });
-
-  if (!serviceId || !templateId || !publicKey) {
-    console.error("❌ EmailJS environment variables missing:", {
+  if (!serviceId || !templateId) {
+    console.error("❌ EmailJS configuration missing:", {
       serviceId: !!serviceId,
       templateId: !!templateId,
-      publicKey: !!publicKey,
     });
     return Promise.reject(
-      new Error("EmailJS configuration is missing environment variables")
+      new Error("EmailJS configuration is incomplete")
     );
   }
 
   const templateParams = { name, email, message };
-  console.log("📧 Sending EmailJS request with parameters:", {
+  console.log("📧 Sending email via EmailJS:", {
     service: serviceId,
     template: templateId,
-    params: Object.keys(templateParams),
+    paramNames: Object.keys(templateParams),
   });
 
-  return emailjs.send(
-    serviceId,
-    templateId,
-    templateParams,
-    {
-      publicKey: publicKey,
-      limitRate: {
-        throttle: 10000, // 10s
-      },
-    }
-  );
+  return emailjs.send(serviceId, templateId, templateParams);
 };
 
 export default mail;

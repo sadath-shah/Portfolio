@@ -3,6 +3,7 @@ import Filter from "bad-words";
 import toast, { Toaster } from "react-hot-toast";
 import { motion } from "framer-motion";
 import gsap from "gsap";
+import emailjs from "@emailjs/browser";
 import mail from "./mailer";
 import styles from "./Contact.module.scss";
 import { MENULINKS } from "../../constants";
@@ -96,6 +97,14 @@ const Contact = () => {
         error();
       });
   };
+
+  useEffect(() => {
+    const publicKey = process.env.NEXT_PUBLIC_USER_ID;
+    if (publicKey) {
+      emailjs.init(publicKey);
+      console.log("✓ EmailJS initialized");
+    }
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {
