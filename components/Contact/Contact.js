@@ -78,16 +78,22 @@ const Contact = () => {
     mail({ name, email, message })
       .then((res) => {
         setIsSending(false);
+        console.log("EmailJS response:", res);
         if (res.status === 200) {
           setMailerResponse("success");
+          success();
           emptyForm();
         } else {
+          console.error("EmailJS non-200 status:", res.status);
           setMailerResponse("error");
+          error();
         }
       })
-      .catch(() => {
+      .catch((err) => {
         setIsSending(false);
+        console.error("EmailJS error:", err);
         setMailerResponse("error");
+        error();
       });
   };
 
