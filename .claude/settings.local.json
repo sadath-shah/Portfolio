@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:medium.com)",
+      "Bash(curl -L -o ecommerce-product-page.png \"https://github.com/Olatoyan/ecommerce-product-page-main/raw/master/screenshots/Screenshot%202023-05-02%20161259.png\")",
+      "Bash(curl -L -o siem-dashboard.png \"https://logit.io/uploads/general/5Qz7BUn9TMnIJhsaZJioAv_siemdashboard.png\")",
+      "WebFetch(domain:blink.new)",
+      "Bash(curl -L -o firewall-dashboard.png \"https://logit.io/uploads/general/4gVvGCdaC2TRRkgq3aTWr7_lVZCqI5__1_.png\")",
+      "Bash(curl -L -o ssh-security-dashboard.png \"https://logit.io/uploads/general/1c7A1no6xri9hMKmxxSj7a_ssh-security-dashboard.png\")",
+      "Bash(curl -L -o linux-dashboard.png \"https://logit.io/uploads/general/2kLVTJNbtqBwvmISudqMW_linuxdashboard__1_.png\")",
+      "Bash(npm run *)",
+      "Read(//tmp/sigwood/docs/img/**)",
+      "Read(//private/tmp/sigwood/docs/img/**)",
+      "Bash(pkill -f \"next-server\\\\|next dev\")",
+      "Bash(pkill -9 -f \"next-server\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/Naresh-Khatri/3d-portfolio/main/src/components/Spline3D.jsx\")",
+      "Bash(npm uninstall *)"
+    ]
+  }
+}

@@ -1,0 +1,124 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1f3a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bgGrad)"/>
+
+  <!-- Header Bar -->
+  <rect width="1200" height="60" fill="#111827" opacity="0.8"/>
+  <text x="30" y="40" font-size="24" font-weight="bold" fill="#FF6B6B">AI Phishing Detector</text>
+  <text x="1050" y="40" font-size="14" fill="#9CA3AF">Live Monitoring</text>
+
+  <!-- Threat Alert Card -->
+  <rect x="20" y="80" width="280" height="140" fill="#7F1D1D" opacity="0.3" stroke="#FF6B6B" stroke-width="2" rx="8"/>
+  <text x="35" y="105" font-size="14" font-weight="bold" fill="#FCA5A5">🚨 HIGH RISK</text>
+  <text x="35" y="130" font-size="12" fill="#FECACA">Phishing Email Detected</text>
+  <text x="35" y="155" font-size="11" fill="#9CA3AF">Confidence: 94.2%</text>
+  <text x="35" y="175" font-size="11" fill="#9CA3AF">IOC: 5 malicious indicators</text>
+  <text x="35" y="195" font-size="11" fill="#9CA3AF">MITRE ATT&CK: T1566.002</text>
+
+  <!-- Detection Stats -->
+  <rect x="320" y="80" width="280" height="140" fill="#1F3A93" opacity="0.3" stroke="#3B82F6" stroke-width="2" rx="8"/>
+  <text x="335" y="105" font-size="14" font-weight="bold" fill="#93C5FD">📊 Today's Stats</text>
+  <text x="335" y="135" font-size="12" fill="#DBEAFE">Total Emails: 2,847</text>
+  <text x="335" y="160" font-size="12" fill="#DBEAFE">Phishing Detected: 42</text>
+  <text x="335" y="185" font-size="12" fill="#DBEAFE">Detection Rate: 97.8%</text>
+
+  <!-- Risk Scoring -->
+  <rect x="620" y="80" width="280" height="140" fill="#3730A3" opacity="0.3" stroke="#A78BFA" stroke-width="2" rx="8"/>
+  <text x="635" y="105" font-size="14" font-weight="bold" fill="#C4B5FD">🎯 Risk Scoring</text>
+  <text x="635" y="135" font-size="12" fill="#E9D5FF">Sender Reputation: 8/10</text>
+  <text x="635" y="160" font-size="12" fill="#E9D5FF">Content Analysis: 9/10</text>
+  <text x="635" y="185" font-size="12" fill="#E9D5FF">URL Analysis: 9/10</text>
+
+  <!-- Timeline -->
+  <rect x="920" y="80" width="260" height="140" fill="#065F46" opacity="0.3" stroke="#10B981" stroke-width="2" rx="8"/>
+  <text x="935" y="105" font-size="14" font-weight="bold" fill="#A7F3D0">⏱️ Recent Activity</text>
+  <text x="935" y="135" font-size="11" fill="#D1FAE5">15:42 - Email Quarantined</text>
+  <text x="935" y="155" font-size="11" fill="#D1FAE5">15:38 - IOC Extracted</text>
+  <text x="935" y="175" font-size="11" fill="#D1FAE5">15:35 - Risk Score: 92%</text>
+  <text x="935" y="195" font-size="11" fill="#D1FAE5">15:32 - Pattern Matched</text>
+
+  <!-- Detection Grid -->
+  <text x="20" y="250" font-size="16" font-weight="bold" fill="#F3F4F6">Recent Detections</text>
+
+  <!-- Table Header -->
+  <rect x="20" y="270" width="1160" height="35" fill="#1F2937" rx="4"/>
+  <text x="35" y="292" font-size="12" font-weight="bold" fill="#9CA3AF">From</text>
+  <text x="250" y="292" font-size="12" font-weight="bold" fill="#9CA3AF">Subject</text>
+  <text x="600" y="292" font-size="12" font-weight="bold" fill="#9CA3AF">Risk Level</text>
+  <text x="800" y="292" font-size="12" font-weight="bold" fill="#9CA3AF">Confidence</text>
+  <text x="1000" y="292" font-size="12" font-weight="bold" fill="#9CA3AF">Time</text>
+
+  <!-- Row 1 -->
+  <rect x="20" y="310" width="1160" height="40" fill="#7F1D1D" opacity="0.2"/>
+  <text x="35" y="335" font-size="11" fill="#F3F4F6">spoofed@bank.com</text>
+  <text x="250" y="335" font-size="11" fill="#F3F4F6">Urgent: Confirm Your Account</text>
+  <circle cx="620" cy="330" r="6" fill="#EF4444"/>
+  <text x="635" y="335" font-size="11" fill="#FCA5A5">CRITICAL</text>
+  <text x="800" y="335" font-size="11" fill="#F3F4F6">96.8%</text>
+  <text x="1000" y="335" font-size="11" fill="#9CA3AF">14:52</text>
+
+  <!-- Row 2 -->
+  <rect x="20" y="355" width="1160" height="40" fill="#1F3A93" opacity="0.2"/>
+  <text x="35" y="380" font-size="11" fill="#F3F4F6">payment@service.net</text>
+  <text x="250" y="380" font-size="11" fill="#F3F4F6">Payment Failed - Click Here</text>
+  <circle cx="620" cy="375" r="6" fill="#F97316"/>
+  <text x="635" y="380" font-size="11" fill="#DBEAFE">HIGH</text>
+  <text x="800" y="380" font-size="11" fill="#F3F4F6">87.4%</text>
+  <text x="1000" y="380" font-size="11" fill="#9CA3AF">14:28</text>
+
+  <!-- Row 3 -->
+  <rect x="20" y="400" width="1160" height="40" fill="#3730A3" opacity="0.2"/>
+  <text x="35" y="425" font-size="11" fill="#F3F4F6">noreply@store.fake</text>
+  <text x="250" y="425" font-size="11" fill="#F3F4F6">Order Confirmation</text>
+  <circle cx="620" cy="420" r="6" fill="#EAB308"/>
+  <text x="635" y="425" font-size="11" fill="#FEF08A">MEDIUM</text>
+  <text x="800" y="425" font-size="11" fill="#F3F4F6">62.1%</text>
+  <text x="1000" y="425" font-size="11" fill="#9CA3AF">13:45</text>
+
+  <!-- Threat Intelligence Box -->
+  <rect x="20" y="460" width="570" height="320" fill="#111827" stroke="#3B82F6" stroke-width="1" opacity="0.6" rx="8"/>
+  <text x="35" y="485" font-size="13" font-weight="bold" fill="#93C5FD">🔍 Threat Intelligence</text>
+
+  <text x="35" y="515" font-size="11" fill="#9CA3AF">IOCs Extracted:</text>
+  <text x="50" y="535" font-size="10" fill="#FECACA">• Malicious URL: hxxps://fake-bank.com/login</text>
+  <text x="50" y="555" font-size="10" fill="#FECACA">• IP Address: 192.168.x.x (Blocked)</text>
+  <text x="50" y="575" font-size="10" fill="#FECACA">• Domain: suspicious-domain.ru</text>
+  <text x="50" y="595" font-size="10" fill="#FECACA">• Sender: spoofed@legitimate.com</text>
+
+  <text x="35" y="625" font-size="11" fill="#9CA3AF">MITRE ATT&CK Mapping:</text>
+  <text x="50" y="645" font-size="10" fill="#A7F3D0">• T1566.002 - Phishing: Spearphishing Link</text>
+  <text x="50" y="665" font-size="10" fill="#A7F3D0">• T1598.003 - Phishing for Information</text>
+  <text x="50" y="685" font-size="10" fill="#A7F3D0">• T1589.001 - Gather Victim Identity Info</text>
+  <text x="50" y="705" font-size="10" fill="#A7F3D0">• T1566.001 - Spearphishing Attachment</text>
+
+  <text x="35" y="735" font-size="11" fill="#9CA3AF">ML Model Confidence: 94.2%</text>
+  <text x="50" y="755" font-size="10" fill="#DBEAFE">TF-IDF Score: 0.892 | Anomaly Score: 0.847</text>
+
+  <!-- Actions Panel -->
+  <rect x="610" y="460" width="570" height="320" fill="#111827" stroke="#10B981" stroke-width="1" opacity="0.6" rx="8"/>
+  <text x="625" y="485" font-size="13" font-weight="bold" fill="#A7F3D0">⚙️ Actions & Response</text>
+
+  <rect x="625" y="505" width="540" height="35" fill="#065F46" opacity="0.4" stroke="#10B981" stroke-width="1" rx="4"/>
+  <text x="640" y="530" font-size="11" fill="#D1FAE5">✓ Quarantine Email</text>
+
+  <rect x="625" y="550" width="540" height="35" fill="#1F3A93" opacity="0.4" stroke="#3B82F6" stroke-width="1" rx="4"/>
+  <text x="640" y="575" font-size="11" fill="#DBEAFE">→ Block Sender Domain</text>
+
+  <rect x="625" y="595" width="540" height="35" fill="#7F1D1D" opacity="0.4" stroke="#FF6B6B" stroke-width="1" rx="4"/>
+  <text x="640" y="620" font-size="11" fill="#FCA5A5">⚠ Alert Security Team</text>
+
+  <rect x="625" y="640" width="540" height="35" fill="#3730A3" opacity="0.4" stroke="#A78BFA" stroke-width="1" rx="4"/>
+  <text x="640" y="665" font-size="11" fill="#E9D5FF">📊 Create Incident Report</text>
+
+  <rect x="625" y="685" width="540" height="35" fill="#1F3A93" opacity="0.4" stroke="#3B82F6" stroke-width="1" rx="4"/>
+  <text x="640" y="710" font-size="11" fill="#DBEAFE">🔄 Update Threat Signatures</text>
+
+  <text x="625" y="750" font-size="10" fill="#9CA3AF">Last Updated: 14:53 UTC | Next Scan: 15:00 UTC</text>
+</svg>
