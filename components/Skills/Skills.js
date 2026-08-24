@@ -5,6 +5,20 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { MENULINKS, SKILLS } from "../../constants";
 
+const getSkillImagePath = (skill) => {
+  const nameMap = {
+    cplusplus: "cplusplus",
+    "Scikit-learn": "scikit-learn",
+    "scikit-learn": "scikit-learn",
+  };
+
+  if (nameMap[skill]) {
+    return `/skills/${nameMap[skill]}.svg`;
+  }
+
+  return `/skills/${skill.toLowerCase().replace(/\s|\(|\)/g, "")}.svg`;
+};
+
 const Skills = () => {
   const sectionRef = useRef(null);
 
@@ -66,7 +80,7 @@ const Skills = () => {
                 {SKILLS.languages.map((skill) => (
                   <Image
                     key={skill}
-                    src={`/skills/${skill.toLowerCase().replace(/\s|\(|\)/g, "")}.svg`}
+                    src={getSkillImagePath(skill)}
                     alt={skill}
                     width={50}
                     height={50}
@@ -84,7 +98,7 @@ const Skills = () => {
                 {SKILLS.developerTools.map((skill) => (
                   <Image
                     key={skill}
-                    src={`/skills/${skill.toLowerCase().replace(/\s|\(|\)/g, "")}.svg`}
+                    src={getSkillImagePath(skill)}
                     alt={skill}
                     width={50}
                     height={50}
@@ -102,7 +116,7 @@ const Skills = () => {
                 {SKILLS.frameworksAndLibraries.map((skill) => (
                   <Image
                     key={skill}
-                    src={`/skills/${skill.toLowerCase().replace(/\s|\(|\)/g, "")}.svg`}
+                    src={getSkillImagePath(skill)}
                     alt={skill}
                     width={50}
                     height={50}
@@ -120,7 +134,7 @@ const Skills = () => {
                 {SKILLS.databases.map((skill) => (
                   <Image
                     key={skill}
-                    src={`/skills/${skill.toLowerCase().replace(/\s|\(|\)/g, "")}.svg`}
+                    src={getSkillImagePath(skill)}
                     alt={skill}
                     width={50}
                     height={50}
