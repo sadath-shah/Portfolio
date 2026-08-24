@@ -7,9 +7,46 @@ import { MENULINKS, SKILLS } from "../../constants";
 
 const getSkillImagePath = (skill) => {
   const nameMap = {
-    cplusplus: "cplusplus",
-    "Scikit-learn": "scikit-learn",
+    // Languages
+    "Python": "Python",
+    "JavaScript": "javascript",
+    "Java": "Java",
+    "C": "C",
+    "cplusplus": "cplusplus",
+    "HTML": "html",
+    "css": "css",
+
+    // Developer Tools
+    "git": "git",
+    "GitHub": "GitHub",
+    "Docker": "Docker",
+    "Postman": "Postman",
+
+    // Frameworks & Libraries
+    "Django": "Django",
+    "tailwindcss": "tailwindcss",
+    "Bootstrap": "Bootstrap",
     "scikit-learn": "scikit-learn",
+    "Scikit-learn": "scikit-learn",
+    "Pandas": "Pandas",
+
+    // AI/ML
+    "NumPy": "numpy",
+    "TF-IDF": "tfidf",
+    "HDBSCAN": "hdbscan",
+
+    // Other skills
+    "Git": "git",
+    "Linux": "linux",
+    "MongoDB": "mongodb",
+    "MySQL": "mysql",
+    "Matplotlib": "Matplotlib",
+    "Vim": "Vim",
+    "Vue.js": "Vue.js",
+    "PostgresSQL": "PostgresSQL",
+    "SQLite": "SQLite",
+    "n8n-color": "n8n-color",
+    "seaborn-1": "seaborn-1",
   };
 
   if (nameMap[skill]) {
