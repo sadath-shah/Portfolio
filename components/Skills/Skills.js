@@ -1,42 +1,107 @@
 /* eslint-disable @next/next/no-img-element */
 import { useLayoutEffect, useRef } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import {
+  SiPython,
+  SiJavascript,
+  SiOpenjdk,
+  SiC,
+  SiHtml5,
+  SiCss,
+  SiReact,
+  SiFastapi,
+  SiFlask,
+  SiDjango,
+  SiBootstrap,
+  SiNodedotjs,
+  SiExpress,
+  SiScikitlearn,
+  SiPydantic,
+  SiAxios,
+  SiTailwindcss,
+  SiGit,
+  SiGithub,
+  SiLinux,
+  SiMongodb,
+  SiMysql,
+  SiMongoose,
+  SiJsonwebtokens,
+  SiGooglecloud,
+  SiVite,
+} from "react-icons/si";
+import {
+  LuDatabase,
+  LuNetwork,
+  LuServer,
+  LuBinary,
+  LuTarget,
+  LuFish,
+  LuScanSearch,
+  LuBrainCircuit,
+  LuListChecks,
+  LuGauge,
+} from "react-icons/lu";
 import { MENULINKS, SKILLS } from "../../constants";
 
-// Only skills with a verified, working icon file in /public/skills go here.
-// Anything not listed renders as a clean text chip instead of a broken image.
+// Every skill maps to a real icon component: an official brand logo
+// (Simple Icons) where one exists, otherwise a consistent Lucide icon
+// standing in for the concept. No text-only chips, no broken images.
+// `color` is the technology's official/commonly recognized brand color
+// (or a tasteful neutral accent for icons with no official logo/color),
+// lightened where needed so it stays visible on a black card.
 const SKILL_ICONS = {
-  Python: "Python",
-  JavaScript: "javascript",
-  Java: "Java",
-  C: "C",
-  HTML: "html",
-  CSS: "css",
-  Django: "Django",
-  "Scikit-learn": "scikit-learn",
-  "Tailwind CSS": "tailwindcss",
-  Git: "git",
-  GitHub: "GitHub",
-  MongoDB: "mongodb",
+  Python: { icon: SiPython, color: "#4B8BBE" },
+  JavaScript: { icon: SiJavascript, color: "#F7DF1E" },
+  Java: { icon: SiOpenjdk, color: "#5382A1" },
+  C: { icon: SiC, color: "#A8B9CC" },
+  SQL: { icon: LuDatabase, color: "#38BDF8" },
+  HTML: { icon: SiHtml5, color: "#E34F26" },
+  CSS: { icon: SiCss, color: "#2965F1" },
+
+  "React.js": { icon: SiReact, color: "#61DAFB" },
+  FastAPI: { icon: SiFastapi, color: "#05998B" },
+  Flask: { icon: SiFlask, color: "#F2F2F2" },
+  Django: { icon: SiDjango, color: "#44B78B" },
+  "Node.js": { icon: SiNodedotjs, color: "#5FA04E" },
+  "Express.js": { icon: SiExpress, color: "#E5E7EB" },
+  "Scikit-learn": { icon: SiScikitlearn, color: "#F7931E" },
+  Pydantic: { icon: SiPydantic, color: "#E92063" },
+  Axios: { icon: SiAxios, color: "#8A6DE9" },
+  Bootstrap: { icon: SiBootstrap, color: "#9179E3" },
+  "Tailwind CSS": { icon: SiTailwindcss, color: "#38BDF8" },
+
+  "MITRE ATT&CK": { icon: LuTarget, color: "#F59E0B" },
+  "Phishing Detection": { icon: LuFish, color: "#F87171" },
+  "IOC Extraction": { icon: LuScanSearch, color: "#22D3EE" },
+  "TF-IDF": { icon: LuBrainCircuit, color: "#A78BFA" },
+  "Rule-Based Threat Detection": { icon: LuListChecks, color: "#60A5FA" },
+  "Risk Scoring": { icon: LuGauge, color: "#FBBF24" },
+
+  Git: { icon: SiGit, color: "#F05033" },
+  GitHub: { icon: SiGithub, color: "#F2F2F2" },
+  Linux: { icon: SiLinux, color: "#FCC624" },
+  MongoDB: { icon: SiMongodb, color: "#47A248" },
+  MySQL: { icon: SiMysql, color: "#5D9FD3" },
+  Mongoose: { icon: SiMongoose, color: "#DD5B4B" },
+  "REST APIs": { icon: LuNetwork, color: "#38BDF8" },
+  JWT: { icon: SiJsonwebtokens, color: "#FB015B" },
+  "Google Cloud Platform": { icon: SiGooglecloud, color: "#4285F4" },
+  Vite: { icon: SiVite, color: "#9179FF" },
+  Uvicorn: { icon: LuServer, color: "#2DD4BF" },
+  Joblib: { icon: LuBinary, color: "#FDBA74" },
 };
 
 const SkillChip = ({ skill }) => {
-  const icon = SKILL_ICONS[skill];
+  const { icon: Icon, color } = SKILL_ICONS[skill];
 
   return (
-    <div className="group flex items-center gap-2 px-3 py-2 bg-gray-800/60 border border-gray-700 rounded-lg hover:border-indigo-light hover:bg-gray-800 transition-all duration-300">
-      {icon && (
-        <Image
-          src={`/skills/${icon}.svg`}
-          alt=""
-          width={20}
-          height={20}
-          className="flex-shrink-0"
-        />
-      )}
-      <span className="text-sm font-medium text-gray-200 group-hover:text-indigo-light whitespace-nowrap">
+    <div className="flex items-center gap-2 px-3 py-2 bg-black border border-white/20 rounded-lg hover:border-white/40 hover:bg-white/5 transition-all duration-300">
+      <Icon
+        className="w-5 h-5 flex-shrink-0"
+        style={{ color }}
+      />
+      <span className="text-lg font-medium text-white whitespace-nowrap">
         {skill}
       </span>
     </div>
@@ -139,7 +204,7 @@ const Skills = () => {
           {Array.isArray(SKILLS.toolsAndPlatforms) && (
             <div className="mt-10">
               <h3 className="uppercase tracking-widest text-gray-light-2 font-medium text-base mb-4 staggered-reveal">
-                Tools / Platforms
+                Tools & Technologies
               </h3>
               <div className="flex flex-wrap gap-3 staggered-reveal">
                 {SKILLS.toolsAndPlatforms.map((skill) => (
